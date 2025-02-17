@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		194F13202D62E32A00B7D4DE /* SwiftData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194F131F2D62E32A00B7D4DE /* SwiftData.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		193112472D59A0550041A36B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		193112362D59A04B0041A36B /* MealRater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealRater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		193112462D59A0550041A36B /* MealRaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealRaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		193112502D59A0550041A36B /* MealRaterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealRaterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		194F131F2D62E32A00B7D4DE /* SwiftData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftData.framework; path = System/Library/Frameworks/SwiftData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194F13202D62E32A00B7D4DE /* SwiftData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,7 @@
 				193112382D59A04B0041A36B /* MealRater */,
 				193112492D59A0550041A36B /* MealRaterTests */,
 				193112532D59A0550041A36B /* MealRaterUITests */,
+				194F131E2D62E32A00B7D4DE /* Frameworks */,
 				193112372D59A04B0041A36B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +97,14 @@
 				193112502D59A0550041A36B /* MealRaterUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		194F131E2D62E32A00B7D4DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				194F131F2D62E32A00B7D4DE /* SwiftData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
