@@ -33,7 +33,7 @@ struct ContentView: View {
                 isRatingViewPresented = true
             }
             .sheet(isPresented: $isRatingViewPresented) {
-                RatingView(rating: $rating)
+                RatingView(rating: $rating, restaurantName: $restaurantName, dishName: $dishName)
             }
 
 

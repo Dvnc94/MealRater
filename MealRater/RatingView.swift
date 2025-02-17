@@ -1,8 +1,12 @@
 import SwiftUI
+import SwiftData
 
 struct RatingView: View {
     @Binding var rating: Int?
+    @Binding var restaurantName: String // You'll likely need to bind these from ContentView as well, if you want to save them
+    @Binding var dishName: String      // Add these @Bindings if you intend to save restaurantName and dishName
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) private var modelContext // Add this line to access the ModelContext
 
     var body: some View {
         VStack {
@@ -37,7 +41,19 @@ struct RatingView: View {
                 .foregroundColor(.red)
 
                 Button("Save") {
-                    dismiss()
+                    if let ratingValue = rating {
+                        // Assuming you have a @Model class named 'Meal' defined (e.g., in Meal.swift)
+                        let newMeal = Meal(restaurantName: restaurantName, dishName: dishName, rating: ratingValue) // Create a Meal object
+                        modelContext.insert(newMeal) // Insert it into the ModelContext
+
+                        do {
+                            try modelContext.save() // Save the context (and data to SwiftData)
+                            print("Meal data saved using SwiftData!") // Confirmation message in console
+                        } catch {
+                            print("Error saving meal data: \(error)") // Print error if saving fails
+                        }
+                    }
+                    dismiss() // Dismiss the rating sheet after saving (or attempting to)
                 }
             }
             .padding(.vertical)
@@ -51,5 +67,5 @@ struct RatingView: View {
 }
 
 #Preview {
-    RatingView(rating: .constant(3))
+    RatingView(rating: .constant(3), restaurantName: .constant("Preview Restaurant"), dishName: .constant("Preview Dish")) // Added preview data for bindings
 }
